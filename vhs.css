@@ -1,0 +1,99 @@
+body {
+    background: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .vhs {
+    position: relative;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    text-shadow:
+      0 0 1px #fff,
+      0 0 2px #f0f,
+      0 0 4px #0ff,
+      5px 0 red,
+      -5px 0 blue;
+    animation: flicker 1s infinite;
+  }
+  
+  /* RGB Shift glitch effect */
+  .vhs::before,
+  .vhs::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    mix-blend-mode: lighten;
+    z-index: -1;
+  }
+  
+  .vhs::before {
+    color: red;
+    left: 2px;
+    animation: glitch-1 1s infinite linear alternate-reverse;
+  }
+  
+  .vhs::after {
+    color: blue;
+    left: -2px;
+    animation: glitch-2 1.2s infinite linear alternate-reverse;
+  }
+  
+  /* Scanlines */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2) 0,
+      rgba(0, 0, 0, 0.2) 2px,
+      transparent 2px,
+      transparent 4px
+    );
+    z-index: 10;
+  }
+  
+  /* Flicker */
+  @keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+    }
+    20%, 24%, 55% {
+      opacity: 0.8;
+    }
+  }
+  
+  /* Glitch */
+  @keyframes glitch-1 {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+    100% { transform: translateX(0); }
+  }
+  
+  @keyframes glitch-2 {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(1px); }
+    50% { transform: translateX(-1px); }
+    75% { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+  }
+  
