@@ -1,0 +1,20 @@
+{
+    "projects": [
+      {
+        "title": "Gestor de Tareas",
+        "description": "App en PHP y JS para manejar tareas diarias.",
+        "link": "#"
+      },
+      {
+        "title": "Sitio de Portafolio",
+        "description": "HTML, CSS y JSON para mostrar proyectos.",
+        "link": "#"
+      },
+      {
+        "title": "API de Películas",
+        "description": "Backend en PHP que devuelve datos JSON.",
+        "link": "#"
+      }
+    ]
+  }
+  

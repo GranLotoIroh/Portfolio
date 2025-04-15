@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio Retro VHS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="vhs-filter"></div>
+  <main>
+    <header>
+      <h1>👾 Dev Fullstack Retro</h1>
+      <p>HTML • CSS • JS • PHP • JSON</p>
+    </header>
+
+    <section id="projects">
+      <h2>Proyectos</h2>
+      <div id="projects-container"></div>
+    </section>
+
+    <section id="contact">
+      <h2>Contacto</h2>
+      <form action="contact.php" method="POST">
+        <input type="text" name="name" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo" required>
+        <textarea name="message" placeholder="Mensaje..." required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
